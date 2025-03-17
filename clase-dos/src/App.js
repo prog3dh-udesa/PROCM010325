@@ -1,29 +1,23 @@
 import React from "react";
-import Header from "./components/Header/Header";
+import {Switch, Route} from 'react-router-dom'
+import Home from "./screens/Home";
+import NotFound from "./screens/NotFound";
+import AboutUs from "./screens/AboutUs";
+import Header from './components/Header/Header'
+import Detalle from "./screens/Detalle";
 
 function App() {
-  let username ={
-    name:'Rosa',
-    streamFavs: ['Olga', 'LuzuTV', 'Vorterix']
-  }
-  return (
-    <React.Fragment>
-      <Header  />
-      <section >
-        <div className='' >
-          <h1>Bienvenido usuario: {username.name} </h1>
-        </div>
-        <div>
-          <h2>Tus Streams favoritos son:</h2>
-          <ul>
-            {
-              username.streamFavs.map((elm) => <li>{elm}</li> )
-            }
-          </ul>
-        </div>
-      </section>
-    </React.Fragment>
-  );
+  return(
+    <>
+      <Header />
+      <Switch>
+        <Route path='/' exact={true} component={Home}  />
+        <Route path ='/aboutus' component={AboutUs} />
+        <Route path='/amigos/:id' component={Detalle} />
+        <Route path='*' component={NotFound} />
+      </Switch>
+    </>
+  )
 }
 
 export default App;
