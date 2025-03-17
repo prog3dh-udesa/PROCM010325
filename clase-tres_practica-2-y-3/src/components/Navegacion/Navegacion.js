@@ -5,20 +5,12 @@ import './styles.css'
 function Navegacion(){
     const opciones = [
         {
-            nombre: 'ADMIN',
+            nombre: 'Home',
             path:'/'
         },
         {
-            nombre: 'Pages',
-            path:'/pages'
-        },
-        {
-            nombre: 'Charts',
-            path:'/charts'
-        },
-        {
-            nombre: 'Tables',
-            path:'/tables'
+            nombre: 'About us',
+            path:'/aboutus'
         },
     ]
     return(
