@@ -1,11 +1,13 @@
 import React from 'react'
-
-function AboutUs() {
+import Buscador from '../../components/Buscador/Buscador'
+function AboutUs(props) {
+  console.log('props aboutus', props)
   return (
     <div>
         <h1>
             AboutUs
         </h1>
+        <Buscador history={props.history} />
         </div>
   )
 }
