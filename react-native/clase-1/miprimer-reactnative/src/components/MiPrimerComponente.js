@@ -17,7 +17,7 @@ class MiPrimerComponente extends Component{
     render(){
         return(
             <View
-                style={styles.contenedor}
+                style={{...styles.contenedor, ...styles.subcontenedor1}}
             >
                 <View style={styles.subcontenedor1}>
                     <TouchableOpacity
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         flex: 1
     },
     subcontenedor1: {
-        backgroundColor: 'pink',
+        backgroundColor: 'yellow',
         flex:2
     },
     subcontenedor2: {
