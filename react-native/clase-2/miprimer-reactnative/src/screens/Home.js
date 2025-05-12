@@ -5,7 +5,8 @@ import {
     Image, 
     StyleSheet,
     FlatList,
-    ActivityIndicator
+    ActivityIndicator,
+    TouchableOpacity
 } from 'react-native'
 import { estudiantes } from "../utils/array";
 import CardEstudiante from "../components/CardEstudiante";
@@ -15,13 +16,31 @@ class Home extends Component{
         super(props)
     }
 
+    redireccionar(nombrePantalla){
+        this.props.navigation.navigate(nombrePantalla)
+    }
+
     render(){
         return(
             <View style={styles.contenedor}>
+                <TouchableOpacity
+                    onPress={() => this.redireccionar('Pagina2') }
+                >
+                    <Text>Ir a Pagina 2</Text>
+                </TouchableOpacity>
                 <ActivityIndicator 
                     color={'red'}
                     size={40}
                 />
+
+                <TouchableOpacity
+                    onPress={()=> this.redireccionar('Tab')}
+                >
+                    <Text>
+                        Entrar a la aplicacion
+                    </Text>
+                </TouchableOpacity>
+
                 <Text>Esta es mi home</Text>
                 <Image
                     style={styles.imagenPerrito}
