@@ -1,13 +1,13 @@
 import { Text, View, StyleSheet } from 'react-native';
 import MiPrimerComponente from './src/components/MiPrimerComponente';
 import Home from './src/screens/Home';
-import { NavigationContainer } from '@react-navigation/native';
-import StackNavigation from './src/navigation/StackNavigation';
 export default function App() {
   return (
-    <NavigationContainer>
-      <StackNavigation />
-    </NavigationContainer>
+    <View style={styles.main}>
+      <Text>Arrancamos con RN</Text>
+      {/* <MiPrimerComponente /> */}
+      <Home />
+    </View>
   );
 }
 
