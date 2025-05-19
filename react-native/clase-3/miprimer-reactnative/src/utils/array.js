@@ -1,0 +1,22 @@
+export const estudiantes = [
+    { id: 1, nombre: "Laura Gómez", edad: 21, carrera: "Ingeniería de Sistemas", imagen: "https://randomuser.me/api/portraits/women/21.jpg" },
+    { id: 2, nombre: "Carlos Rodríguez", edad: 23, carrera: "Administración de Empresas", imagen: "https://randomuser.me/api/portraits/men/34.jpg" },
+    { id: 3, nombre: "María Fernández", edad: 20, carrera: "Psicología", imagen: "https://randomuser.me/api/portraits/women/12.jpg" },
+    { id: 4, nombre: "Juan Pérez", edad: 22, carrera: "Medicina", imagen: "https://randomuser.me/api/portraits/men/42.jpg" },
+    { id: 5, nombre: "Ana Torres", edad: 24, carrera: "Derecho", imagen: "https://randomuser.me/api/portraits/women/28.jpg" },
+    { id: 6, nombre: "David Martínez", edad: 25, carrera: "Arquitectura", imagen: "https://randomuser.me/api/portraits/men/16.jpg" },
+    { id: 7, nombre: "Sofía Herrera", edad: 19, carrera: "Diseño Gráfico", imagen: "https://randomuser.me/api/portraits/women/45.jpg" },
+    { id: 8, nombre: "Miguel Ángel", edad: 22, carrera: "Economía", imagen: "https://randomuser.me/api/portraits/men/50.jpg" },
+    { id: 9, nombre: "Daniela Ruiz", edad: 23, carrera: "Relaciones Internacionales", imagen: "https://randomuser.me/api/portraits/women/33.jpg" },
+    { id: 10, nombre: "Andrés Salazar", edad: 21, carrera: "Física", imagen: "https://randomuser.me/api/portraits/men/61.jpg" },
+    { id: 11, nombre: "Isabela Castro", edad: 20, carrera: "Química", imagen: "https://randomuser.me/api/portraits/women/19.jpg" },
+    { id: 12, nombre: "Tomás Vega", edad: 24, carrera: "Ingeniería Civil", imagen: "https://randomuser.me/api/portraits/men/23.jpg" },
+    { id: 13, nombre: "Valentina Jiménez", edad: 22, carrera: "Comunicación Social", imagen: "https://randomuser.me/api/portraits/women/8.jpg" },
+    { id: 14, nombre: "Julián Morales", edad: 23, carrera: "Ingeniería Industrial", imagen: "https://randomuser.me/api/portraits/men/10.jpg" },
+    { id: 15, nombre: "Camila Ortega", edad: 19, carrera: "Biología", imagen: "https://randomuser.me/api/portraits/women/26.jpg" },
+    { id: 16, nombre: "Sebastián Luna", edad: 21, carrera: "Matemáticas", imagen: "https://randomuser.me/api/portraits/men/36.jpg" },
+    { id: 17, nombre: "Lucía Navarro", edad: 20, carrera: "Historia del Arte", imagen: "https://randomuser.me/api/portraits/women/47.jpg" },
+    { id: 18, nombre: "Felipe Ríos", edad: 22, carrera: "Filosofía", imagen: "https://randomuser.me/api/portraits/men/55.jpg" },
+    { id: 19, nombre: "Martina Cordero", edad: 23, carrera: "Antropología", imagen: "https://randomuser.me/api/portraits/women/14.jpg" },
+    { id: 20, nombre: "Diego Benítez", edad: 24, carrera: "Ingeniería Electrónica", imagen: "https://randomuser.me/api/portraits/men/18.jpg" }
+  ];
