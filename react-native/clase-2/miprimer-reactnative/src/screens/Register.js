@@ -6,6 +6,7 @@ import {
     TouchableOpacity
 } from 'react-native'
 import React, { Component } from 'react'
+import { auth, db } from '../firebase/config'
 
 export default class Register extends Component {
     constructor(props){
@@ -13,19 +14,53 @@ export default class Register extends Component {
         this.state = {
             input1:'',
             input2:'',
+            input3:'',
             error: false
         }
     }
 
-    registrarUsuario(){
+    componentDidMount(){
+        auth.onAuthStateChanged((user) =>{
+            if(user){
+                console.log('user en Register', user)
+                this.props.navigation.navigate('Tab')
+            }
+        })
+    }
+
+    registrarUsuario(email, password, username){
         if(
-            this.state.input1 === 'Nelson' &&
-            this.state.input2 === '12345'
+            (email !== '' && password !== '') 
+            &&
+            (email.includes('@'))
+            &&
+            password.length > 5
+            &&
+            username.length > 3
         ){
-            this.props.navigation.navigate('Tab')
+            auth
+            .createUserWithEmailAndPassword(email, password)
+            .then((user) => {
+                db.collection('users').add({
+                    owner: email,
+                    createdAt: Date.now(),
+                    updatedAt: Date.now(),
+                    username: this.state.input3
+                })
+                .then(()=> {
+                    this.props.navigation.navigate('Tab')
+                })
+                .catch((err) => console.log(err))
+                
+            })
+            .catch((err)=> console.log('firebase err', err))
         } else {
             this.setState({input1:'', input2: '', error: true})
         }
+    }
+
+    irAlLogin(){
+        this.props.navigation.navigate('Login')
     }
 
   render() {
@@ -51,12 +86,24 @@ export default class Register extends Component {
                 placeholder='Ingresa tu password'
                 secureTextEntry={true}
             />
-            <TouchableOpacity onPress={()=> this.registrarUsuario()}>
+            <TextInput
+                style={
+                    styles.input
+                }
+                keyboardType='default'
+                value={this.state.input3}
+                onChangeText={(texto) => this.setState({input3: texto, error: false }) }
+                placeholder='Ingresa tu nombre de usuario'
+            />
+            <TouchableOpacity onPress={()=> this.registrarUsuario(this.state.input1, this.state.input2, this.state.input3)}>
                 <Text>Registrarme</Text>
             </TouchableOpacity>
             {
                 this.state.error ? <Text>Credenciales invalidas</Text> : null
             }
+            <TouchableOpacity onPress={()=> this.irAlLogin()}>
+                <Text>Ir al login</Text>
+            </TouchableOpacity>
       </View>
     )
   }

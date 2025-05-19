@@ -14,11 +14,12 @@ export default function BottomTabs() {
           name='Feed' 
           component={Feed}
           options={{
+            headerShown:false,
             tabBarIcon: () => <FontAwesome name='home' size={24} color={'red'} />
           }}
           />
-        <Tab.Screen name='Buscador' component={Buscador} />
-        <Tab.Screen name='Perfil' component={Perfil} />
+        <Tab.Screen name='Buscador' component={Buscador} options={{headerShown: false}} />
+        <Tab.Screen name='Perfil' component={Perfil} options={{headerShown: false}}/>
     </Tab.Navigator>
   )
 }
