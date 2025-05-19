@@ -4,11 +4,15 @@ import Home from "../screens/Home";
 import Pagina2 from "../screens/Pagina2";
 import Pagina3 from "../screens/Pagina3";
 import BottomTabs from './BottomTabs'
+import Register from "../screens/Register";
 const Stack = createNativeStackNavigator();
 
 function StackNavigation() {
     return(
         <Stack.Navigator>
+            <Stack.Screen name="Register" component={Register} options={
+                { headerShown: false}
+            } />
             <Stack.Screen 
             name='Home' 
             component={Home}
